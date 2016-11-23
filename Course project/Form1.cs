@@ -18,6 +18,7 @@ namespace Course_project
             InitializeComponent();
 
             this.StyleManager = metroStyleManager1;
+            panel2.Width = 265;
             
         }
 
@@ -64,42 +65,29 @@ namespace Course_project
 
         }
 
-        int colbutton = 0;
-        private void metroButton1_Click_1(object sender, EventArgs e)
-        {
-            //Получаем ссылку на кнопку, на которую нажали
-            Button oldbutton = (Button)sender;
-            //Создаем новую кнопку
-            Button newbutton = new Button();
-            //Меняем текст на новой кнопке
-            newbutton.Text = "Кнопка №" + colbutton;
-            newbutton.Height = 60;
-            newbutton.Location = new Point(0, 60*colbutton);
-
-            //oldbutton.Height * (colbutton) + 10
-            newbutton.Width = 100;
-
-            //Размещаем ее ниже (на 10px) кнопки, на которую мы нажали
-
-            //Добавляем событие нажатия на новую кнопку 
-            //(то же что и при нажатии на исходную)
-            //newbutton.Click += new EventHandler(metroButton1_Click_1);
-            //Добавляем элемент на форму
-            this.Controls.Add(newbutton);
-            colbutton++;
-           
-        }
+        
 
         List<Button> btn = new List<Button>();
         int x = 0;
         int y = 0;
+
+        
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Button oldbutton = (Button)sender;
             flowLayoutPanel1.AutoScroll = true;
+            //flowLayoutPanel1.VerticalScroll.Enabled = true;
+            
+
+            //flowLayoutPanel1.VerticalScroll.Visible = false;
+            //flowLayoutPanel1.HorizontalScroll.Enabled = false;
+            //flowLayoutPanel1.HorizontalScroll.Visible = false;
+            //flowLayoutPanel1.VerticalScroll.Value = flowLayoutPanel1.VerticalScroll.Maximum;
+            
+            //metroScrollBar1.
             Button newbtn = new Button();
             btn.Add(newbtn);
-            newbtn.Width = flowLayoutPanel1.Width-25;
+            newbtn.Width = panel2.Width-10;
             newbtn.Height = 60;
             newbtn.FlatStyle = FlatStyle.Flat;
             newbtn.BackColor = Color.FromArgb(34, 34, 34);
@@ -107,18 +95,30 @@ namespace Course_project
             //newbtn.FlatAppearance.BorderSize = 1;
             //newbtn.Met
             newbtn.Text = "Button" + this.x.ToString();
-            newbtn.Location = new Point(
-            flowLayoutPanel1.AutoScrollPosition.X,
-            flowLayoutPanel1.AutoScrollPosition.Y + (y + 6));
-            y += 35;
+            //newbtn.Location = new Point(
+            //flowLayoutPanel1.AutoScrollPosition.X,
+            //flowLayoutPanel1.AutoScrollPosition.Y + (y + 6));
+            //y += 35;
             newbtn.Click += new EventHandler(dynamic_button_click);
 
-            newbtn.Tag = x;
-            flowLayoutPanel1.Controls.Add(newbtn);
+            Point pt = new Point(this.flowLayoutPanel1.AutoScrollPosition.X,
+                     this.flowLayoutPanel1.AutoScrollPosition.Y);
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.Maximum = this.flowLayoutPanel1.DisplayRectangle.Height;
+            this.metroScrollBar1.LargeChange = metroScrollBar1.Maximum /
+                         metroScrollBar1.Height + this.flowLayoutPanel1.Height;
+            this.metroScrollBar1.SmallChange = 15;
+            this.metroScrollBar1.Value = Math.Abs(this.flowLayoutPanel1.AutoScrollPosition.Y);
 
+
+                        newbtn.Tag = x;
+            flowLayoutPanel1.Controls.Add(newbtn);
+            //flowLayoutPanel1.Controls.Add(metroScrollBar1);
             
+
             x = x + 1;
         }
+
 
         int current_number = 0;
         object s;
@@ -138,6 +138,14 @@ namespace Course_project
             /*textBox1.Text = pb.Text;
             pb.Text = textBox1.Text;
             label1.Text = pb.Text;*/
+        }
+
+        private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            flowLayoutPanel1.AutoScrollPosition = new Point(0,
+                        metroScrollBar1.Value);
+            metroScrollBar1.Invalidate();
+            Application.DoEvents();
         }
     }
 }

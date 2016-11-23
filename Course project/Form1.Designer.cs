@@ -35,9 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -81,10 +84,36 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(264, 30);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 380);
             this.flowLayoutPanel1.TabIndex = 14;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.HighlightOnWheel = true;
+            this.metroScrollBar1.Location = new System.Drawing.Point(545, 30);
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.Size = new System.Drawing.Size(10, 380);
+            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroScrollBar1.TabIndex = 0;
+            this.metroScrollBar1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroScrollBar1.UseBarColor = true;
+            this.metroScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBar1_Scroll);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(264, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(275, 380);
+            this.panel2.TabIndex = 15;
             // 
             // Form1
             // 
@@ -92,7 +121,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(840, 430);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.metroScrollBar1);
             this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -106,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -116,6 +147,8 @@
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
