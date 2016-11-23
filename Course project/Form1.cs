@@ -89,5 +89,55 @@ namespace Course_project
             colbutton++;
            
         }
+
+        List<Button> btn = new List<Button>();
+        int x = 0;
+        int y = 0;
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Button oldbutton = (Button)sender;
+            flowLayoutPanel1.AutoScroll = true;
+            Button newbtn = new Button();
+            btn.Add(newbtn);
+            newbtn.Width = flowLayoutPanel1.Width-25;
+            newbtn.Height = 60;
+            newbtn.FlatStyle = FlatStyle.Flat;
+            newbtn.BackColor = Color.FromArgb(34, 34, 34);
+            newbtn.FlatAppearance.BorderColor = Color.FromArgb(68, 68, 68);
+            //newbtn.FlatAppearance.BorderSize = 1;
+            //newbtn.Met
+            newbtn.Text = "Button" + this.x.ToString();
+            newbtn.Location = new Point(
+            flowLayoutPanel1.AutoScrollPosition.X,
+            flowLayoutPanel1.AutoScrollPosition.Y + (y + 6));
+            y += 35;
+            newbtn.Click += new EventHandler(dynamic_button_click);
+
+            newbtn.Tag = x;
+            flowLayoutPanel1.Controls.Add(newbtn);
+
+            
+            x = x + 1;
+        }
+
+        int current_number = 0;
+        object s;
+        private void dynamic_button_click(object sender, EventArgs evArgs)
+        {
+            var pb = (Button)sender;
+            var tmp2 = (Button)sender;
+            var tmptag = (Button)sender;
+            var id = (Button)sender;
+            var num = (Button)sender;
+            var button = sender as Button;
+
+            s = sender;
+            // current_number = (int)(num.Tag);
+            current_number = btn.IndexOf(button);
+            //num = s;
+            /*textBox1.Text = pb.Text;
+            pb.Text = textBox1.Text;
+            label1.Text = pb.Text;*/
+        }
     }
 }
