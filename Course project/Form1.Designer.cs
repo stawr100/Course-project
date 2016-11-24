@@ -33,6 +33,7 @@
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SaveAll = new MetroFramework.Controls.MetroButton();
             this.ExitNotes = new MetroFramework.Controls.MetroButton();
             this.DeleteNote = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -42,7 +43,7 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SaveNote = new MetroFramework.Controls.MetroButton();
-            this.SaveAll = new MetroFramework.Controls.MetroButton();
+            this.NoteTextBox = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -78,6 +79,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 380);
             this.panel1.TabIndex = 13;
+            // 
+            // SaveAll
+            // 
+            this.SaveAll.Location = new System.Drawing.Point(51, 192);
+            this.SaveAll.Name = "SaveAll";
+            this.SaveAll.Size = new System.Drawing.Size(140, 40);
+            this.SaveAll.TabIndex = 16;
+            this.SaveAll.Text = "Сохранить все";
+            this.SaveAll.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.SaveAll.Click += new System.EventHandler(this.SaveAll_Click);
             // 
             // ExitNotes
             // 
@@ -149,6 +160,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.NoteTextBox);
             this.metroPanel1.Controls.Add(this.textBox1);
             this.metroPanel1.Controls.Add(this.SaveNote);
             this.metroPanel1.Controls.Add(this.metroScrollBar1);
@@ -176,7 +188,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 20);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "хуй";
             // 
             // SaveNote
             // 
@@ -189,15 +200,16 @@
             this.SaveNote.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SaveNote.Click += new System.EventHandler(this.SaveNote_Click);
             // 
-            // SaveAll
+            // NoteTextBox
             // 
-            this.SaveAll.Location = new System.Drawing.Point(51, 192);
-            this.SaveAll.Name = "SaveAll";
-            this.SaveAll.Size = new System.Drawing.Size(140, 40);
-            this.SaveAll.TabIndex = 16;
-            this.SaveAll.Text = "Сохранить все";
-            this.SaveAll.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.SaveAll.Click += new System.EventHandler(this.SaveAll_Click);
+            this.NoteTextBox.Location = new System.Drawing.Point(32, 59);
+            this.NoteTextBox.Multiline = true;
+            this.NoteTextBox.Name = "NoteTextBox";
+            this.NoteTextBox.Size = new System.Drawing.Size(343, 232);
+            this.NoteTextBox.Style = MetroFramework.MetroColorStyle.Orange;
+            this.NoteTextBox.TabIndex = 6;
+            this.NoteTextBox.Text = "metroTextBox1";
+            this.NoteTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Form1
             // 
@@ -220,6 +232,7 @@
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Заметки";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -244,6 +257,7 @@
         private MetroFramework.Controls.MetroButton SaveNote;
         private System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroButton SaveAll;
+        private MetroFramework.Controls.MetroTextBox NoteTextBox;
     }
 }
 
