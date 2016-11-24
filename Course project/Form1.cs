@@ -19,78 +19,36 @@ namespace Course_project
 
             this.StyleManager = metroStyleManager1;
             panel2.Width = 265;
-            
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
-
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void myClickFunction(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
-        
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
 
         List<Button> btn = new List<Button>();
         int x = 0;
-        int y = 0;
+        // int y = 0;
 
-        
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Button oldbutton = (Button)sender;
             flowLayoutPanel1.AutoScroll = true;
             //flowLayoutPanel1.VerticalScroll.Enabled = true;
-            
+
 
             //flowLayoutPanel1.VerticalScroll.Visible = false;
             //flowLayoutPanel1.HorizontalScroll.Enabled = false;
             //flowLayoutPanel1.HorizontalScroll.Visible = false;
             //flowLayoutPanel1.VerticalScroll.Value = flowLayoutPanel1.VerticalScroll.Maximum;
-            
+
             //metroScrollBar1.
             Button newbtn = new Button();
             btn.Add(newbtn);
-            newbtn.Width = panel2.Width-10;
-            newbtn.Height = 60;
+            newbtn.Width = panel2.Width - 10;
+            newbtn.Height = 40;
             newbtn.FlatStyle = FlatStyle.Flat;
             newbtn.BackColor = Color.FromArgb(34, 34, 34);
+
             newbtn.FlatAppearance.BorderColor = Color.FromArgb(68, 68, 68);
             //newbtn.FlatAppearance.BorderSize = 1;
             //newbtn.Met
@@ -100,7 +58,6 @@ namespace Course_project
             //flowLayoutPanel1.AutoScrollPosition.Y + (y + 6));
             //y += 35;
             newbtn.Click += new EventHandler(dynamic_button_click);
-
             Point pt = new Point(this.flowLayoutPanel1.AutoScrollPosition.X,
                      this.flowLayoutPanel1.AutoScrollPosition.Y);
             this.metroScrollBar1.Minimum = 0;
@@ -111,15 +68,14 @@ namespace Course_project
             this.metroScrollBar1.Value = Math.Abs(this.flowLayoutPanel1.AutoScrollPosition.Y);
 
 
-                        newbtn.Tag = x;
+            newbtn.Tag = x;
             flowLayoutPanel1.Controls.Add(newbtn);
-            //flowLayoutPanel1.Controls.Add(metroScrollBar1);
-            
+
 
             x = x + 1;
         }
 
-
+        public int xx;
         int current_number = 0;
         object s;
         private void dynamic_button_click(object sender, EventArgs evArgs)
@@ -135,10 +91,45 @@ namespace Course_project
             // current_number = (int)(num.Tag);
             current_number = btn.IndexOf(button);
             //num = s;
-            /*textBox1.Text = pb.Text;
-            pb.Text = textBox1.Text;
-            label1.Text = pb.Text;*/
-        }
+            
+            textBox1.Text = pb.Text;
+            xx = current_number;
+
+            //pb.Text = textBox1.Text;
+            //label1.Text = pb.Text;*/
+    }
+
+        
+
+        /*  private void dynamic_button_hover(object sender, EventArgs evArgs)
+          {
+              var pb = (Button)sender;
+              /*var tmp2 = (Button)sender;
+              var tmptag = (Button)sender;
+              var id = (Button)sender;
+              var num = (Button)sender;
+              var button = sender as Button;*/
+
+        //pb.BackColor = Color.FromArgb(170, 170, 170);
+
+        //s = sender;
+        // current_number = (int)(num.Tag);
+        //current_number = btn.IndexOf(button);
+        //num = s;
+        //metroLabel1.Text = pb.Text;
+        //pb.Text = textBox1.Text;
+        //label1.Text = pb.Text;
+        //}
+
+        /* private void dynamic_button_leave(object sender, EventArgs evArgs)
+         {
+             var pb = (Button)sender;
+
+
+             pb.BackColor = Color.FromArgb(34, 34, 34);
+
+
+         }*/
 
         private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
@@ -146,6 +137,38 @@ namespace Course_project
                         metroScrollBar1.Value);
             metroScrollBar1.Invalidate();
             Application.DoEvents();
+        }
+
+        private void DeleteNote_Click(object sender, EventArgs e)
+        {
+            btn.RemoveAt(current_number);
+            flowLayoutPanel1.Controls.Remove(s as Button);
+        }
+
+        private void ExitNotes_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
+
+        private void SaveNote_Click(object sender, EventArgs e)
+        {
+            //metroTextBox1.Text = metroLabel1.Text;
+            btn[current_number].Text = textBox1.Text;
+
+
+        }
+
+        private void SaveAll_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamWriter textFile = new System.IO.StreamWriter("buttons.txt");
+            for (int h = 0; h < btn.Count; h++)
+            {
+
+                textFile.WriteLine(btn[h].Text);
+            }
+            textFile.Close();
         }
     }
 }
