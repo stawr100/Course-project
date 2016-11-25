@@ -282,9 +282,9 @@
         private MetroFramework.Controls.MetroButton ExitNotes;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton SaveNote;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroButton SaveAll;
-        private MetroFramework.Controls.MetroTextBox NoteTextBox;
+        public MetroFramework.Controls.MetroTextBox NoteTextBox;
         private MetroFramework.Controls.MetroButton settings;
         private MetroFramework.Controls.MetroLink metroLink1;
     }

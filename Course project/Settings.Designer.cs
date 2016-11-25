@@ -35,7 +35,11 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.BottomUpRadio = new MetroFramework.Controls.MetroRadioButton();
             this.TopDownRadio = new MetroFramework.Controls.MetroRadioButton();
-            this.metroTrackBar1 = new MetroFramework.Controls.MetroTrackBar();
+            this.DeleteAllTrackBar = new MetroFramework.Controls.MetroTrackBar();
+            this.apply_settings = new MetroFramework.Controls.MetroButton();
+            this.ok_button = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +87,6 @@
             this.BottomUpRadio.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BottomUpRadio.UseStyleColors = true;
             this.BottomUpRadio.UseVisualStyleBackColor = true;
-            this.BottomUpRadio.CheckedChanged += new System.EventHandler(this.BottomUpRadio_CheckedChanged);
             // 
             // TopDownRadio
             // 
@@ -97,27 +100,69 @@
             this.TopDownRadio.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopDownRadio.UseStyleColors = true;
             this.TopDownRadio.UseVisualStyleBackColor = true;
-            this.TopDownRadio.CheckedChanged += new System.EventHandler(this.TopDownRadio_CheckedChanged);
             // 
-            // metroTrackBar1
+            // DeleteAllTrackBar
             // 
-            this.metroTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.metroTrackBar1.Location = new System.Drawing.Point(74, 259);
-            this.metroTrackBar1.Maximum = 50;
-            this.metroTrackBar1.Name = "metroTrackBar1";
-            this.metroTrackBar1.Size = new System.Drawing.Size(75, 23);
-            this.metroTrackBar1.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.metroTrackBar1.TabIndex = 4;
-            this.metroTrackBar1.Text = "metroTrackBar1";
-            this.metroTrackBar1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTrackBar1.Value = 0;
+            this.DeleteAllTrackBar.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteAllTrackBar.Location = new System.Drawing.Point(30, 290);
+            this.DeleteAllTrackBar.Maximum = 50;
+            this.DeleteAllTrackBar.Name = "DeleteAllTrackBar";
+            this.DeleteAllTrackBar.Size = new System.Drawing.Size(176, 23);
+            this.DeleteAllTrackBar.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.DeleteAllTrackBar.TabIndex = 4;
+            this.DeleteAllTrackBar.Text = "metroTrackBar1";
+            this.DeleteAllTrackBar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroToolTip1.SetToolTip(this.DeleteAllTrackBar, "Для удаления всех заметок, переместите ползунок в конец\r\n");
+            this.DeleteAllTrackBar.Value = 0;
+            // 
+            // apply_settings
+            // 
+            this.apply_settings.Location = new System.Drawing.Point(242, 327);
+            this.apply_settings.Name = "apply_settings";
+            this.apply_settings.Size = new System.Drawing.Size(83, 23);
+            this.apply_settings.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.apply_settings.TabIndex = 5;
+            this.apply_settings.Text = "Применить";
+            this.apply_settings.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.apply_settings.Click += new System.EventHandler(this.apply_settings_Click);
+            // 
+            // ok_button
+            // 
+            this.ok_button.Location = new System.Drawing.Point(175, 327);
+            this.ok_button.Name = "ok_button";
+            this.ok_button.Size = new System.Drawing.Size(61, 23);
+            this.ok_button.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.ok_button.TabIndex = 6;
+            this.ok_button.Text = "Ок";
+            this.ok_button.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ok_button.Click += new System.EventHandler(this.ok_button_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 266);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel3.TabIndex = 7;
+            this.metroLabel3.Text = "Удалить все заметки:";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroToolTip1.SetToolTip(this.metroLabel3, "Для удаления всех заметок, переместите ползунок в конец\r\n");
+            // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 363);
-            this.Controls.Add(this.metroTrackBar1);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.ok_button);
+            this.Controls.Add(this.apply_settings);
+            this.Controls.Add(this.DeleteAllTrackBar);
             this.Controls.Add(this.TopDownRadio);
             this.Controls.Add(this.BottomUpRadio);
             this.Controls.Add(this.metroLabel2);
@@ -132,6 +177,7 @@
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Settings";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,6 +191,10 @@
         private MetroFramework.Controls.MetroRadioButton BottomUpRadio;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroRadioButton TopDownRadio;
-        private MetroFramework.Controls.MetroTrackBar metroTrackBar1;
+        private MetroFramework.Controls.MetroTrackBar DeleteAllTrackBar;
+        private MetroFramework.Controls.MetroButton ok_button;
+        private MetroFramework.Controls.MetroButton apply_settings;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }

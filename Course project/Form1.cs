@@ -24,8 +24,8 @@ namespace Course_project
 
 
 
-        List<Button> btn = new List<Button>();
-        List<string> NoteText = new List<string>();
+        public List<Button> btn = new List<Button>();
+        public List<string> NoteText = new List<string>();
         int x = 0;
 
 
@@ -178,6 +178,22 @@ namespace Course_project
                 while ((note = srnote.ReadLine()) != null)
                 {
                     NoteText.Add(note);
+                }
+            }
+            using (System.IO.StreamReader settings_main = new System.IO.StreamReader("settings\\flowdirection.txt"))
+            {
+                string flowdir;
+                while ((flowdir = settings_main.ReadLine()) != null)
+                {
+                    if (flowdir == "TopDown")
+                    {
+                        flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+                    }
+                    if (flowdir == "BottomUp")
+                    {
+                        flowLayoutPanel1.FlowDirection = FlowDirection.BottomUp;
+                    }
+
                 }
             }
         }
