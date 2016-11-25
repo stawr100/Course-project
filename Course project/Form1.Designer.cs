@@ -33,6 +33,8 @@
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.settings = new MetroFramework.Controls.MetroButton();
             this.SaveAll = new MetroFramework.Controls.MetroButton();
             this.ExitNotes = new MetroFramework.Controls.MetroButton();
             this.DeleteNote = new MetroFramework.Controls.MetroButton();
@@ -41,9 +43,9 @@
             this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.NoteTextBox = new MetroFramework.Controls.MetroTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SaveNote = new MetroFramework.Controls.MetroButton();
-            this.NoteTextBox = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,13 +56,13 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = this;
-            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(217, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -69,6 +71,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.metroLink1);
+            this.panel1.Controls.Add(this.settings);
             this.panel1.Controls.Add(this.SaveAll);
             this.panel1.Controls.Add(this.ExitNotes);
             this.panel1.Controls.Add(this.DeleteNote);
@@ -79,6 +83,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 380);
             this.panel1.TabIndex = 13;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.metroLink1.Location = new System.Drawing.Point(51, 335);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(75, 23);
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLink1.TabIndex = 18;
+            this.metroLink1.Text = "metroLink1";
+            this.metroLink1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
+            // settings
+            // 
+            this.settings.Location = new System.Drawing.Point(51, 238);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(140, 40);
+            this.settings.Style = MetroFramework.MetroColorStyle.Orange;
+            this.settings.TabIndex = 17;
+            this.settings.Text = "Настройки";
+            this.settings.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.settings.Click += new System.EventHandler(this.settings_Click);
             // 
             // SaveAll
             // 
@@ -92,7 +119,7 @@
             // 
             // ExitNotes
             // 
-            this.ExitNotes.Location = new System.Drawing.Point(51, 238);
+            this.ExitNotes.Location = new System.Drawing.Point(51, 284);
             this.ExitNotes.Name = "ExitNotes";
             this.ExitNotes.Size = new System.Drawing.Size(140, 40);
             this.ExitNotes.Style = MetroFramework.MetroColorStyle.Orange;
@@ -178,16 +205,27 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // NoteTextBox
+            // 
+            this.NoteTextBox.Location = new System.Drawing.Point(32, 59);
+            this.NoteTextBox.Multiline = true;
+            this.NoteTextBox.Name = "NoteTextBox";
+            this.NoteTextBox.Size = new System.Drawing.Size(343, 232);
+            this.NoteTextBox.Style = MetroFramework.MetroColorStyle.Orange;
+            this.NoteTextBox.TabIndex = 6;
+            this.NoteTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.textBox1.Location = new System.Drawing.Point(32, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 20);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "Создайте заметку";
             // 
             // SaveNote
             // 
@@ -199,17 +237,6 @@
             this.SaveNote.Text = "Сохранить";
             this.SaveNote.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SaveNote.Click += new System.EventHandler(this.SaveNote_Click);
-            // 
-            // NoteTextBox
-            // 
-            this.NoteTextBox.Location = new System.Drawing.Point(32, 59);
-            this.NoteTextBox.Multiline = true;
-            this.NoteTextBox.Name = "NoteTextBox";
-            this.NoteTextBox.Size = new System.Drawing.Size(343, 232);
-            this.NoteTextBox.Style = MetroFramework.MetroColorStyle.Orange;
-            this.NoteTextBox.TabIndex = 6;
-            this.NoteTextBox.Text = "metroTextBox1";
-            this.NoteTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Form1
             // 
@@ -229,7 +256,7 @@
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
-            this.Style = MetroFramework.MetroColorStyle.Orange;
+            this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Заметки";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -248,7 +275,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroButton DeleteNote;
@@ -258,6 +285,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroButton SaveAll;
         private MetroFramework.Controls.MetroTextBox NoteTextBox;
+        private MetroFramework.Controls.MetroButton settings;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }
 
