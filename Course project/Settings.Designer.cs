@@ -40,6 +40,10 @@
             this.ok_button = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.RU_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.EN_radio = new MetroFramework.Controls.MetroRadioButton();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +81,7 @@
             // 
             this.BottomUpRadio.AutoSize = true;
             this.BottomUpRadio.Checked = true;
-            this.BottomUpRadio.Location = new System.Drawing.Point(30, 97);
+            this.BottomUpRadio.Location = new System.Drawing.Point(3, 3);
             this.BottomUpRadio.Name = "BottomUpRadio";
             this.BottomUpRadio.Size = new System.Drawing.Size(111, 15);
             this.BottomUpRadio.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -91,7 +95,7 @@
             // TopDownRadio
             // 
             this.TopDownRadio.AutoSize = true;
-            this.TopDownRadio.Location = new System.Drawing.Point(175, 97);
+            this.TopDownRadio.Location = new System.Drawing.Point(132, 3);
             this.TopDownRadio.Name = "TopDownRadio";
             this.TopDownRadio.Size = new System.Drawing.Size(105, 15);
             this.TopDownRadio.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -154,17 +158,72 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 126);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(118, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel4.TabIndex = 8;
+            this.metroLabel4.Text = "Язык интерфейса:";
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // RU_radio
+            // 
+            this.RU_radio.AutoSize = true;
+            this.RU_radio.Checked = true;
+            this.RU_radio.Location = new System.Drawing.Point(30, 148);
+            this.RU_radio.Name = "RU_radio";
+            this.RU_radio.Size = new System.Drawing.Size(68, 15);
+            this.RU_radio.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.RU_radio.TabIndex = 9;
+            this.RU_radio.TabStop = true;
+            this.RU_radio.Text = "Русский";
+            this.RU_radio.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RU_radio.UseStyleColors = true;
+            this.RU_radio.UseVisualStyleBackColor = true;
+            // 
+            // EN_radio
+            // 
+            this.EN_radio.AutoSize = true;
+            this.EN_radio.Location = new System.Drawing.Point(154, 148);
+            this.EN_radio.Name = "EN_radio";
+            this.EN_radio.Size = new System.Drawing.Size(61, 15);
+            this.EN_radio.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.EN_radio.TabIndex = 10;
+            this.EN_radio.Text = "English";
+            this.EN_radio.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.EN_radio.UseStyleColors = true;
+            this.EN_radio.UseVisualStyleBackColor = true;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(26, 91);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(267, 32);
+            this.metroPanel1.TabIndex = 11;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 363);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.RU_radio);
+            this.Controls.Add(this.EN_radio);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.ok_button);
             this.Controls.Add(this.apply_settings);
             this.Controls.Add(this.DeleteAllTrackBar);
-            this.Controls.Add(this.TopDownRadio);
-            this.Controls.Add(this.BottomUpRadio);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.DisplayHeader = false;
@@ -196,5 +255,9 @@
         private MetroFramework.Controls.MetroButton apply_settings;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
+        private MetroFramework.Controls.MetroRadioButton EN_radio;
+        private MetroFramework.Controls.MetroRadioButton RU_radio;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        public MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }

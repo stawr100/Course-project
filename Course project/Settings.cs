@@ -17,6 +17,8 @@ namespace Course_project
         {
             InitializeComponent();
             this.StyleManager = metroStyleManager1;
+            metroPanel1.Controls.Add(BottomUpRadio);
+            metroPanel1.Controls.Add(TopDownRadio);
 
         }
 
@@ -31,11 +33,14 @@ namespace Course_project
         {
             Form1 main = this.Owner as Form1;
             if (main != null)
-            {   
+            {
+                
                 if (BottomUpRadio.Checked == true)
+                    
                 {
                     main.flowLayoutPanel1.FlowDirection = FlowDirection.BottomUp;
                 }
+                
                 if (TopDownRadio.Checked == true)
                 {
                     main.flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
@@ -53,6 +58,43 @@ namespace Course_project
                         }
 
                     }
+                }
+                if (EN_radio.Checked == true)
+                {
+                    metroLabel1.Text = "Settings";
+                    metroLabel2.Text = "Direction notes:";
+                    BottomUpRadio.Text = "New first";
+                    TopDownRadio.Text = "New last";
+                    metroLabel4.Text = "Interface language:";
+                    metroLabel3.Text = "Delete all notes";
+                    apply_settings.Text = "Apply";
+                    ok_button.Text = "Ok";
+                    main.metroButton1.Text = "Add note";
+                    main.DeleteNote.Text = "Delete the note";
+                    main.SaveAll.Text = "Save all";
+                    main.settings.Text = "Settings";
+                    main.ExitNotes.Text = "Exit";
+                    main.textBox1.Text = "Create a note";
+                    main.SaveNote.Text = "Save";
+                    
+                }
+                if(RU_radio.Checked == true)
+                {
+                    metroLabel1.Text = "Настройки";
+                    metroLabel2.Text = "Порядок заметок:";
+                    BottomUpRadio.Text = "Новые в начале";
+                    TopDownRadio.Text = "Новые в конце";
+                    metroLabel4.Text = "Язык интерфейса:";
+                    metroLabel3.Text = "Удалить все заметки";
+                    apply_settings.Text = "Применить";
+                    ok_button.Text = "Ок";
+                    main.metroButton1.Text = "Добавить заметку";
+                    main.DeleteNote.Text = "Удалить заметку";
+                    main.SaveAll.Text = "Сохранить все";
+                    main.settings.Text = "Настройки";
+                    main.ExitNotes.Text = "Выход";
+                    main.textBox1.Text = "Cоздайте заметку";
+                    main.SaveNote.Text = "Сохранить";
                 }
 
                 System.IO.StreamWriter settings = new System.IO.StreamWriter("settings\\flowdirection.txt");

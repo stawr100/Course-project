@@ -33,7 +33,6 @@
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.settings = new MetroFramework.Controls.MetroButton();
             this.SaveAll = new MetroFramework.Controls.MetroButton();
             this.ExitNotes = new MetroFramework.Controls.MetroButton();
@@ -71,7 +70,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroLink1);
             this.panel1.Controls.Add(this.settings);
             this.panel1.Controls.Add(this.SaveAll);
             this.panel1.Controls.Add(this.ExitNotes);
@@ -83,18 +81,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 380);
             this.panel1.TabIndex = 13;
-            // 
-            // metroLink1
-            // 
-            this.metroLink1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.metroLink1.Location = new System.Drawing.Point(51, 335);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(75, 23);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroLink1.TabIndex = 18;
-            this.metroLink1.Text = "metroLink1";
-            this.metroLink1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // settings
             // 
@@ -274,19 +260,18 @@
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        public MetroFramework.Controls.MetroButton metroButton1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
         private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroButton DeleteNote;
-        private MetroFramework.Controls.MetroButton ExitNotes;
+        public MetroFramework.Controls.MetroButton DeleteNote;
+        public MetroFramework.Controls.MetroButton ExitNotes;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroButton SaveNote;
+        public MetroFramework.Controls.MetroButton SaveNote;
         public System.Windows.Forms.TextBox textBox1;
-        private MetroFramework.Controls.MetroButton SaveAll;
+        public MetroFramework.Controls.MetroButton SaveAll;
         public MetroFramework.Controls.MetroTextBox NoteTextBox;
-        private MetroFramework.Controls.MetroButton settings;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        public MetroFramework.Controls.MetroButton settings;
     }
 }
 
