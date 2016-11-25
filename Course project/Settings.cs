@@ -59,32 +59,22 @@ namespace Course_project
                 settings.WriteLine(main.flowLayoutPanel1.FlowDirection);
                 settings.Close();
 
-                System.IO.StreamWriter fd_radio = new System.IO.StreamWriter("settings\\fd_radio.txt");
-                if (BottomUpRadio.Checked == true)
-                {
-                    fd_radio.WriteLine("BottomUpRadio");
-                }
-                if (TopDownRadio.Checked == true)
-                {
-                    fd_radio.WriteLine("TopDownRadio");
-                }
-                fd_radio.Close();
-
+              
             }
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            using (System.IO.StreamReader settings_main = new System.IO.StreamReader("settings\\fd_radio.txt"))
+            using (System.IO.StreamReader fd_radio_settings = new System.IO.StreamReader("settings\\flowdirection.txt"))
             {
                 string fd_radio;
-                while ((fd_radio = settings_main.ReadLine()) != null)
+                while ((fd_radio = fd_radio_settings.ReadLine()) != null)
                 {
-                    if (fd_radio == "TopDownRadio")
+                    if (fd_radio == "TopDown")
                     {
                         TopDownRadio.Checked = true;
                     }
-                    if (fd_radio == "BottomUpRadio")
+                    if (fd_radio == "BottomUp")
                     {
                         BottomUpRadio.Checked = true;
                     }
