@@ -130,8 +130,8 @@ namespace Course_project
             System.IO.StreamWriter textFileNote = new System.IO.StreamWriter("notes.txt");
             for (int h = 0; h < btn.Count; h++)
             {
-
-                textFileNote.WriteLine(NoteText[h]);
+                string s = NoteText[h].Replace(Environment.NewLine, @" \n ");
+            textFileNote.WriteLine(s);
             }
             textFileNote.Close();
 
@@ -177,7 +177,8 @@ namespace Course_project
                 string note;
                 while ((note = srnote.ReadLine()) != null)
                 {
-                    NoteText.Add(note);
+                    string s = note.Replace(@" \n ", Environment.NewLine);
+                    NoteText.Add(s);
                 }
             }
             using (System.IO.StreamReader settings_main = new System.IO.StreamReader("settings\\flowdirection.txt"))
