@@ -44,6 +44,10 @@
             this.RU_radio = new MetroFramework.Controls.MetroRadioButton();
             this.EN_radio = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +112,7 @@
             // DeleteAllTrackBar
             // 
             this.DeleteAllTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteAllTrackBar.Location = new System.Drawing.Point(30, 290);
+            this.DeleteAllTrackBar.Location = new System.Drawing.Point(30, 535);
             this.DeleteAllTrackBar.Maximum = 50;
             this.DeleteAllTrackBar.Name = "DeleteAllTrackBar";
             this.DeleteAllTrackBar.Size = new System.Drawing.Size(176, 23);
@@ -118,11 +122,10 @@
             this.DeleteAllTrackBar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroToolTip1.SetToolTip(this.DeleteAllTrackBar, "Для удаления всех заметок, переместите ползунок в конец\r\n");
             this.DeleteAllTrackBar.Value = 0;
-            
             // 
             // apply_settings
             // 
-            this.apply_settings.Location = new System.Drawing.Point(242, 327);
+            this.apply_settings.Location = new System.Drawing.Point(227, 573);
             this.apply_settings.Name = "apply_settings";
             this.apply_settings.Size = new System.Drawing.Size(83, 23);
             this.apply_settings.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -133,7 +136,7 @@
             // 
             // ok_button
             // 
-            this.ok_button.Location = new System.Drawing.Point(175, 327);
+            this.ok_button.Location = new System.Drawing.Point(154, 573);
             this.ok_button.Name = "ok_button";
             this.ok_button.Size = new System.Drawing.Size(61, 23);
             this.ok_button.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -145,7 +148,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 266);
+            this.metroLabel3.Location = new System.Drawing.Point(26, 513);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(136, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -212,11 +215,71 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(26, 182);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(144, 19);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "Настройки редактора:";
+            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.textBox1.Location = new System.Drawing.Point(30, 369);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(280, 126);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "egergergergerg";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "8",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"});
+            this.metroComboBox1.Location = new System.Drawing.Point(142, 206);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(68, 29);
+            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroComboBox1.TabIndex = 14;
+            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(30, 211);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(106, 19);
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel6.TabIndex = 15;
+            this.metroLabel6.Text = "Размер шрифта";
+            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel6.UseStyleColors = true;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 363);
+            this.ClientSize = new System.Drawing.Size(340, 618);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.RU_radio);
             this.Controls.Add(this.EN_radio);
@@ -227,6 +290,7 @@
             this.Controls.Add(this.DeleteAllTrackBar);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DisplayHeader = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -260,5 +324,9 @@
         private MetroFramework.Controls.MetroRadioButton RU_radio;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         public MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.TextBox textBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
