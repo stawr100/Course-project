@@ -46,8 +46,9 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroTrackBar1 = new MetroFramework.Controls.MetroTrackBar();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +113,7 @@
             // DeleteAllTrackBar
             // 
             this.DeleteAllTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteAllTrackBar.Location = new System.Drawing.Point(30, 535);
+            this.DeleteAllTrackBar.Location = new System.Drawing.Point(30, 460);
             this.DeleteAllTrackBar.Maximum = 50;
             this.DeleteAllTrackBar.Name = "DeleteAllTrackBar";
             this.DeleteAllTrackBar.Size = new System.Drawing.Size(176, 23);
@@ -125,7 +126,7 @@
             // 
             // apply_settings
             // 
-            this.apply_settings.Location = new System.Drawing.Point(227, 573);
+            this.apply_settings.Location = new System.Drawing.Point(227, 498);
             this.apply_settings.Name = "apply_settings";
             this.apply_settings.Size = new System.Drawing.Size(83, 23);
             this.apply_settings.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -136,7 +137,7 @@
             // 
             // ok_button
             // 
-            this.ok_button.Location = new System.Drawing.Point(154, 573);
+            this.ok_button.Location = new System.Drawing.Point(154, 498);
             this.ok_button.Name = "ok_button";
             this.ok_button.Size = new System.Drawing.Size(61, 23);
             this.ok_button.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -148,7 +149,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(26, 513);
+            this.metroLabel3.Location = new System.Drawing.Point(26, 438);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(136, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -232,52 +233,61 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.textBox1.Location = new System.Drawing.Point(30, 369);
+            this.textBox1.Location = new System.Drawing.Point(30, 293);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(280, 126);
             this.textBox1.TabIndex = 13;
             this.textBox1.Text = "egergergergerg";
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "8",
-            "10",
-            "12",
-            "14",
-            "16",
-            "18",
-            "20"});
-            this.metroComboBox1.Location = new System.Drawing.Point(142, 206);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(68, 29);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.metroComboBox1.TabIndex = 14;
-            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
-            // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(30, 211);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(106, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(109, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel6.TabIndex = 15;
-            this.metroLabel6.Text = "Размер шрифта";
+            this.metroLabel6.Text = "Размер шрифта:";
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel6.UseStyleColors = true;
+            // 
+            // metroTrackBar1
+            // 
+            this.metroTrackBar1.BackColor = System.Drawing.Color.Transparent;
+            this.metroTrackBar1.Location = new System.Drawing.Point(30, 245);
+            this.metroTrackBar1.Maximum = 32;
+            this.metroTrackBar1.Minimum = 8;
+            this.metroTrackBar1.Name = "metroTrackBar1";
+            this.metroTrackBar1.Size = new System.Drawing.Size(280, 23);
+            this.metroTrackBar1.SmallChange = 2;
+            this.metroTrackBar1.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroTrackBar1.TabIndex = 16;
+            this.metroTrackBar1.Text = "metroTrackBar1";
+            this.metroTrackBar1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTrackBar1.Value = 8;
+            this.metroTrackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroTrackBar1_Scroll);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(154, 211);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel7.TabIndex = 17;
+            this.metroLabel7.Text = "metroLabel7";
+            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel7.UseStyleColors = true;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 618);
+            this.ClientSize = new System.Drawing.Size(340, 535);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroTrackBar1);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroPanel1);
@@ -326,7 +336,8 @@
         public MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.TextBox textBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroTrackBar metroTrackBar1;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
     }
 }

@@ -189,12 +189,16 @@ namespace Course_project
         
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float i = Int32.Parse(metroComboBox1.Text);
+            
             //textBox1.Font = new Font(FontFamily.GenericSansSerif, i, FontStyle.Bold, FontStyle.Italic);
 
         }
-
         
-
+        private void metroTrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            metroLabel7.Text = metroTrackBar1.Value.ToString();
+            float textsize = (float)metroTrackBar1.Value;
+            textBox1.Font = new Font(FontFamily.GenericSansSerif, textsize, FontStyle.Regular);
+        }
     }
 }
