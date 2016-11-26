@@ -196,6 +196,54 @@ namespace Course_project
 
                 }
             }
+
+            int lan = 0; ;
+            using (System.IO.StreamReader language_state = new System.IO.StreamReader("settings\\language_state.txt"))
+            {
+                string la_state;
+                while ((la_state = language_state.ReadLine()) != null)
+                {
+                    if (la_state == "RU")
+                    {
+                        lan = 1;
+                    }
+                    if (la_state == "EN")
+                    {
+                        lan = 0;
+                    }
+
+                }
+            }
+
+            if (lan == 1)
+            {
+                metroButton1.Text = "Добавить заметку";
+                DeleteNote.Text = "Удалить заметку";
+                SaveAll.Text = "Сохранить все";
+                settings.Text = "Настройки";
+                ExitNotes.Text = "Выход";
+                if (textBox1.Text == "Create a note")
+                {
+                    textBox1.Text = "Cоздайте заметку";
+                }
+                SaveNote.Text = "Сохранить";
+            }
+            if (lan == 0)
+            {
+                metroButton1.Text = "Add note";
+                DeleteNote.Text = "Delete the note";
+                SaveAll.Text = "Save all";
+                settings.Text = "Settings";
+                ExitNotes.Text = "Exit";
+                if (textBox1.Text == "Создайте заметку")
+                {
+                    textBox1.Text = "Create a note";
+                }
+
+                SaveNote.Text = "Save";
+            }
+
+            
         }
 
         private void metroRadioButton1_CheckedChanged(object sender, EventArgs e)

@@ -74,7 +74,11 @@ namespace Course_project
                     main.SaveAll.Text = "Save all";
                     main.settings.Text = "Settings";
                     main.ExitNotes.Text = "Exit";
-                    main.textBox1.Text = "Create a note";
+                    if (main.textBox1.Text == "Создайте заметку")
+                    {
+                        main.textBox1.Text = "Create a note";
+                    }
+                    
                     main.SaveNote.Text = "Save";
                     
                 }
@@ -93,7 +97,10 @@ namespace Course_project
                     main.SaveAll.Text = "Сохранить все";
                     main.settings.Text = "Настройки";
                     main.ExitNotes.Text = "Выход";
-                    main.textBox1.Text = "Cоздайте заметку";
+                    if (main.textBox1.Text == "Create a note")
+                    {
+                        main.textBox1.Text = "Cоздайте заметку";
+                    }                    
                     main.SaveNote.Text = "Сохранить";
                 }
 
@@ -101,7 +108,18 @@ namespace Course_project
                 settings.WriteLine(main.flowLayoutPanel1.FlowDirection);
                 settings.Close();
 
-              
+                System.IO.StreamWriter language_state = new System.IO.StreamWriter("settings\\language_state.txt");
+                if (EN_radio.Checked == true)
+                {
+                    language_state.WriteLine("EN");
+                }
+                if (RU_radio.Checked == true)
+                {
+                    language_state.WriteLine("RU");
+                }
+                language_state.Close();
+
+                
             }
         }
 
@@ -123,6 +141,51 @@ namespace Course_project
 
                 }
             }
+
+            int lan = 0;
+            using (System.IO.StreamReader language_state = new System.IO.StreamReader("settings\\language_state.txt"))
+            {
+                string la_state;
+                while ((la_state = language_state.ReadLine()) != null)
+                {
+                    if (la_state == "RU")
+                    {
+                        RU_radio.Checked = true;
+                        lan = 1;
+                    }
+                    if (la_state == "EN")
+                    {
+                        EN_radio.Checked = true;
+                        lan = 0;
+                    }
+
+                }
+            }
+
+            if (lan == 1)
+            {
+                metroLabel1.Text = "Настройки";
+                metroLabel2.Text = "Порядок заметок:";
+                BottomUpRadio.Text = "Новые в начале";
+                TopDownRadio.Text = "Новые в конце";
+                metroLabel4.Text = "Язык интерфейса:";
+                metroLabel3.Text = "Удалить все заметки";
+                apply_settings.Text = "Применить";
+                ok_button.Text = "Ок";
+            }
+            if (lan == 0)
+            {
+                metroLabel1.Text = "Settings";
+                metroLabel2.Text = "Direction notes:";
+                BottomUpRadio.Text = "New first";
+                TopDownRadio.Text = "New last";
+                metroLabel4.Text = "Interface language:";
+                metroLabel3.Text = "Delete all notes";
+                apply_settings.Text = "Apply";
+                ok_button.Text = "Ok";
+            }
         }
+
+        
     }
 }

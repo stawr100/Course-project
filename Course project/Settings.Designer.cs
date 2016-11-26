@@ -118,6 +118,7 @@
             this.DeleteAllTrackBar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroToolTip1.SetToolTip(this.DeleteAllTrackBar, "Для удаления всех заметок, переместите ползунок в конец\r\n");
             this.DeleteAllTrackBar.Value = 0;
+            
             // 
             // apply_settings
             // 
