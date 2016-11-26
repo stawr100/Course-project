@@ -80,7 +80,10 @@ namespace Course_project
                     }
                     
                     main.SaveNote.Text = "Save";
-                    
+                    textBox1.Text = "Similarly, consultation with a broad asset contributes to the preparation and implementation of the positions taken by participants in relation to the assigned tasks.";
+                    metroLabel5.Text = "Editor settings:";
+                    metroLabel6.Text = "Font size:";
+
                 }
                 if(RU_radio.Checked == true)
                 {
@@ -102,6 +105,9 @@ namespace Course_project
                         main.textBox1.Text = "Cоздайте заметку";
                     }                    
                     main.SaveNote.Text = "Сохранить";
+                    textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.";
+                    metroLabel5.Text = "Настройки редактора:";
+                    metroLabel6.Text = "Размер шрифта:";
                 }
 
                 System.IO.StreamWriter settings = new System.IO.StreamWriter("settings\\flowdirection.txt");
@@ -119,7 +125,14 @@ namespace Course_project
                 }
                 language_state.Close();
 
-                
+               
+                float textsize_main = (float)metroTrackBar1.Value;
+                main.NoteTextBox.Font = new Font(FontFamily.GenericSansSerif, textsize_main, FontStyle.Regular);
+
+                System.IO.StreamWriter fontsize = new System.IO.StreamWriter("settings\\fontsize.txt");
+                fontsize.WriteLine(metroTrackBar1.Value);
+                fontsize.Close();
+
             }
         }
 
@@ -172,6 +185,8 @@ namespace Course_project
                 metroLabel3.Text = "Удалить все заметки";
                 apply_settings.Text = "Применить";
                 ok_button.Text = "Ок";
+                textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.";
+
             }
             if (lan == 0)
             {
@@ -183,6 +198,20 @@ namespace Course_project
                 metroLabel3.Text = "Delete all notes";
                 apply_settings.Text = "Apply";
                 ok_button.Text = "Ok";
+                textBox1.Text = "Similarly, consultation with a broad asset contributes to the preparation and implementation of the positions taken by participants in relation to the assigned tasks.";
+                metroLabel5.Text = "Настройки редактора:";
+                metroLabel6.Text = "Размер шрифта:";
+            }
+            using (System.IO.StreamReader fontsize = new System.IO.StreamReader("settings\\fontsize.txt"))
+            {
+                string fontsizestr;
+                while ((fontsizestr = fontsize.ReadLine()) != null)
+                {
+                    float tempsize = Convert.ToSingle(fontsizestr);
+                    textBox1.Font = new Font(FontFamily.GenericSansSerif, tempsize, FontStyle.Regular);
+                    metroTrackBar1.Value = Int32.Parse(fontsizestr);
+                    metroLabel7.Text = fontsizestr;
+                }
             }
         }
 
@@ -199,6 +228,11 @@ namespace Course_project
             metroLabel7.Text = metroTrackBar1.Value.ToString();
             float textsize = (float)metroTrackBar1.Value;
             textBox1.Font = new Font(FontFamily.GenericSansSerif, textsize, FontStyle.Regular);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

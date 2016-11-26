@@ -42,14 +42,16 @@
             this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.NoteTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SaveNote = new MetroFramework.Controls.MetroButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -173,7 +175,7 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.NoteTextBox);
+            this.metroPanel1.Controls.Add(this.panel3);
             this.metroPanel1.Controls.Add(this.textBox1);
             this.metroPanel1.Controls.Add(this.SaveNote);
             this.metroPanel1.Controls.Add(this.metroScrollBar1);
@@ -193,23 +195,26 @@
             // 
             // NoteTextBox
             // 
-            this.NoteTextBox.Location = new System.Drawing.Point(32, 59);
+            this.NoteTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.NoteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NoteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NoteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.NoteTextBox.Location = new System.Drawing.Point(0, 0);
             this.NoteTextBox.Multiline = true;
             this.NoteTextBox.Name = "NoteTextBox";
-            this.NoteTextBox.Size = new System.Drawing.Size(343, 232);
-            this.NoteTextBox.Style = MetroFramework.MetroColorStyle.Orange;
+            this.NoteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.NoteTextBox.Size = new System.Drawing.Size(360, 252);
             this.NoteTextBox.TabIndex = 6;
-            this.NoteTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.textBox1.Location = new System.Drawing.Point(32, 24);
+            this.textBox1.Location = new System.Drawing.Point(32, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
+            this.textBox1.Size = new System.Drawing.Size(234, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Создайте заметку";
             // 
@@ -223,6 +228,14 @@
             this.SaveNote.Text = "Сохранить";
             this.SaveNote.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SaveNote.Click += new System.EventHandler(this.SaveNote_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.NoteTextBox);
+            this.panel3.Location = new System.Drawing.Point(32, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(343, 252);
+            this.panel3.TabIndex = 7;
             // 
             // Form1
             // 
@@ -252,6 +265,8 @@
             this.panel2.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,8 +285,9 @@
         public MetroFramework.Controls.MetroButton SaveNote;
         public System.Windows.Forms.TextBox textBox1;
         public MetroFramework.Controls.MetroButton SaveAll;
-        public MetroFramework.Controls.MetroTextBox NoteTextBox;
         public MetroFramework.Controls.MetroButton settings;
+        public System.Windows.Forms.TextBox NoteTextBox;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

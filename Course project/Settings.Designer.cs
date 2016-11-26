@@ -238,7 +238,9 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(280, 126);
             this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "egergergergerg";
+            this.textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализаци" +
+    "и позиций, занимаемых участниками в отношении поставленных задач.\r\n";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // metroLabel6
             // 

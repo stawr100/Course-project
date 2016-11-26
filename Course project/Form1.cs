@@ -243,8 +243,17 @@ namespace Course_project
 
                 SaveNote.Text = "Save";
             }
+            using (System.IO.StreamReader fontsize = new System.IO.StreamReader("settings\\fontsize.txt"))
+            {
+                string fontsizestr;
+                while ((fontsizestr = fontsize.ReadLine()) != null)
+                {
+                    float tempsize = Convert.ToSingle(fontsizestr);
+                    NoteTextBox.Font = new Font(FontFamily.GenericSansSerif, tempsize, FontStyle.Regular);
+                }
+            }
 
-            
+
         }
 
         private void metroRadioButton1_CheckedChanged(object sender, EventArgs e)
