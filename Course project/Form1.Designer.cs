@@ -42,10 +42,10 @@
             this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SaveNote = new MetroFramework.Controls.MetroButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -193,6 +193,14 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.NoteTextBox);
+            this.panel3.Location = new System.Drawing.Point(32, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(343, 252);
+            this.panel3.TabIndex = 7;
+            // 
             // NoteTextBox
             // 
             this.NoteTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -229,14 +237,6 @@
             this.SaveNote.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.SaveNote.Click += new System.EventHandler(this.SaveNote_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.NoteTextBox);
-            this.panel3.Location = new System.Drawing.Point(32, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(343, 252);
-            this.panel3.TabIndex = 7;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,8 +256,9 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.Text = "Заметки";
+            this.Text = "Notes";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

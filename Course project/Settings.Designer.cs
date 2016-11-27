@@ -49,6 +49,7 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroTrackBar1 = new MetroFramework.Controls.MetroTrackBar();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,6 +235,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.textBox1.Location = new System.Drawing.Point(30, 293);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(30);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(280, 126);
@@ -282,11 +284,25 @@
             this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel7.UseStyleColors = true;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(26, 498);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel8.TabIndex = 18;
+            this.metroLabel8.Text = "О программе";
+            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel8.UseStyleColors = true;
+            this.metroLabel8.Click += new System.EventHandler(this.metroLabel8_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 535);
+            this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroTrackBar1);
             this.Controls.Add(this.metroLabel6);
@@ -311,7 +327,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.Text = "Settings";
+            this.Text = "Настройки";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
@@ -341,5 +357,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTrackBar metroTrackBar1;
         private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
     }
 }

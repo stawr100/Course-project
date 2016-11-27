@@ -74,7 +74,7 @@ namespace Course_project
                     main.SaveAll.Text = "Save all";
                     main.settings.Text = "Settings";
                     main.ExitNotes.Text = "Exit";
-                    if (main.textBox1.Text == "Создайте заметку")
+                    if (main.textBox1.Text == "Cоздайте заметку")
                     {
                         main.textBox1.Text = "Create a note";
                     }
@@ -83,6 +83,11 @@ namespace Course_project
                     textBox1.Text = "Similarly, consultation with a broad asset contributes to the preparation and implementation of the positions taken by participants in relation to the assigned tasks.";
                     metroLabel5.Text = "Editor settings:";
                     metroLabel6.Text = "Font size:";
+                    Settings.ActiveForm.Text = "Settings";
+                    metroToolTip1.SetToolTip(metroLabel3, "To delete all the notes, move the slider to the end");
+                    metroToolTip1.SetToolTip(DeleteAllTrackBar, "To delete all the notes, move the slider to the end");
+                    metroLabel8.Text = "About";
+                   
 
                 }
                 if(RU_radio.Checked == true)
@@ -108,6 +113,10 @@ namespace Course_project
                     textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.";
                     metroLabel5.Text = "Настройки редактора:";
                     metroLabel6.Text = "Размер шрифта:";
+                    Settings.ActiveForm.Text = "Настройки";
+                    metroToolTip1.SetToolTip(metroLabel3, "Для удаления всех заметок, переместите ползунок в конец");
+                    metroToolTip1.SetToolTip(DeleteAllTrackBar, "Для удаления всех заметок, переместите ползунок в конец");
+                    metroLabel8.Text = "О программе";
                 }
 
                 System.IO.StreamWriter settings = new System.IO.StreamWriter("settings\\flowdirection.txt");
@@ -186,6 +195,10 @@ namespace Course_project
                 apply_settings.Text = "Применить";
                 ok_button.Text = "Ок";
                 textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.";
+                this.Text = "Настройки";
+                metroToolTip1.SetToolTip(metroLabel3, "Для удаления всех заметок, переместите ползунок в конец");
+                metroToolTip1.SetToolTip(DeleteAllTrackBar, "Для удаления всех заметок, переместите ползунок в конец");
+                metroLabel8.Text = "О программе";
 
             }
             if (lan == 0)
@@ -199,8 +212,12 @@ namespace Course_project
                 apply_settings.Text = "Apply";
                 ok_button.Text = "Ok";
                 textBox1.Text = "Similarly, consultation with a broad asset contributes to the preparation and implementation of the positions taken by participants in relation to the assigned tasks.";
-                metroLabel5.Text = "Настройки редактора:";
-                metroLabel6.Text = "Размер шрифта:";
+                metroLabel5.Text = "Editor settings:";
+                metroLabel6.Text = "Font size:";
+                this.Text = "Settings";
+                metroToolTip1.SetToolTip(metroLabel3, "To delete all the notes, move the slider to the end");
+                metroToolTip1.SetToolTip(DeleteAllTrackBar, "To delete all the notes, move the slider to the end");
+                metroLabel8.Text = "About";
             }
             using (System.IO.StreamReader fontsize = new System.IO.StreamReader("settings\\fontsize.txt"))
             {
@@ -232,6 +249,13 @@ namespace Course_project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
 
         }
     }

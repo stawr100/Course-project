@@ -104,7 +104,8 @@ namespace Course_project
 
         private void ExitNotes_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Exit exit = new Exit();
+            exit.ShowDialog ();
         }
 
 
@@ -280,6 +281,12 @@ namespace Course_project
             Settings settings = new Settings();
             settings.Owner = this;
             settings.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Exit exit = new Exit();
+            //exit.ShowDialog ();
         }
     }
 }
