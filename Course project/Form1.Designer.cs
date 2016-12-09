@@ -42,6 +42,7 @@
             this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -175,6 +176,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.panel3);
             this.metroPanel1.Controls.Add(this.textBox1);
             this.metroPanel1.Controls.Add(this.SaveNote);
@@ -193,12 +195,24 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(275, 29);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.metroLabel1.TabIndex = 8;
+            this.metroLabel1.Text = "metroLabel1";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel1.UseStyleColors = true;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.NoteTextBox);
-            this.panel3.Location = new System.Drawing.Point(32, 50);
+            this.panel3.Location = new System.Drawing.Point(32, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(343, 252);
+            this.panel3.Size = new System.Drawing.Size(343, 242);
             this.panel3.TabIndex = 7;
             // 
             // NoteTextBox
@@ -211,7 +225,7 @@
             this.NoteTextBox.Multiline = true;
             this.NoteTextBox.Name = "NoteTextBox";
             this.NoteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.NoteTextBox.Size = new System.Drawing.Size(360, 252);
+            this.NoteTextBox.Size = new System.Drawing.Size(360, 241);
             this.NoteTextBox.TabIndex = 6;
             // 
             // textBox1
@@ -220,7 +234,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.textBox1.Location = new System.Drawing.Point(32, 14);
+            this.textBox1.Location = new System.Drawing.Point(32, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(343, 23);
             this.textBox1.TabIndex = 5;
@@ -288,6 +302,7 @@
         public MetroFramework.Controls.MetroButton settings;
         public System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.Panel panel3;
+        public MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
 

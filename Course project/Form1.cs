@@ -27,6 +27,7 @@ namespace Course_project
         public List<Button> btn = new List<Button>();
         int lan = 0;
         public List<string> NoteText = new List<string>();
+        public List<string> date_create = new List<string>();
 
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace Course_project
             flowLayoutPanel1.AutoScroll = true;
             Button newbtn = new Button();
             NoteText.Add("");
+            date_create.Add("");
             btn.Add(newbtn);
             newbtn.Width = panel2.Width - 10;
             newbtn.Height = 40;
@@ -93,6 +95,7 @@ namespace Course_project
             s = sender;
             current_number = btn.IndexOf(button);
             NoteTextBox.Text = NoteText[current_number];
+            metroLabel1.Text = date_create[current_number];
 
             textBox1.Text = pb.Text;
 
@@ -116,8 +119,13 @@ namespace Course_project
                 {
                     btn.RemoveAt(current_number);
                     flowLayoutPanel1.Controls.Remove(s as Button);
+                    NoteText.RemoveAt(current_number);
+                    date_create.RemoveAt(current_number);
+                    metroLabel1.Text = "";
                     textBox1.Text = "";
                     NoteTextBox.Text = "";
+
+                    
                 }
                 
             }
@@ -136,6 +144,8 @@ namespace Course_project
         {
             btn[current_number].Text = textBox1.Text;
             NoteText[current_number] = NoteTextBox.Text;
+            metroLabel1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            date_create[current_number] = metroLabel1.Text;
         }
 
         private void SaveAll_Click(object sender, EventArgs e)
@@ -155,6 +165,14 @@ namespace Course_project
             textFileNote.WriteLine(s);
             }
             textFileNote.Close();
+
+            System.IO.StreamWriter textFileDate = new System.IO.StreamWriter("date.txt");
+            for (int h = 0; h < btn.Count; h++)
+            {
+                
+                textFileDate.WriteLine(date_create[h]);
+            }
+            textFileDate.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -201,6 +219,17 @@ namespace Course_project
                     NoteText.Add(s);
                 }
             }
+
+            using (System.IO.StreamReader datefile = new System.IO.StreamReader("date.txt"))
+            {
+                string datestr;
+                while ((datestr = datefile.ReadLine()) != null)
+                {
+                    //string s = note.Replace(@" \n ", Environment.NewLine);
+                    date_create.Add(datestr);
+                }
+            }
+
             using (System.IO.StreamReader settings_main = new System.IO.StreamReader("settings\\flowdirection.txt"))
             {
                 string flowdir;
@@ -263,6 +292,9 @@ namespace Course_project
 
                 SaveNote.Text = "Save";
             }
+
+            metroLabel1.Text = "";
+
             using (System.IO.StreamReader fontsize = new System.IO.StreamReader("settings\\fontsize.txt"))
             {
                 string fontsizestr;

@@ -52,9 +52,20 @@ namespace Course_project
                         for (int h = 0; h < main.btn.Count; h++)
                         {
                             main.btn.Clear();
+                            main.NoteText.Clear();
+                            main.date_create.Clear();
                             main.flowLayoutPanel1.Controls.Clear();
-                            main.textBox1.Text = "Создайте заметку";
+                            if (EN_radio.Checked == true)
+                            {
+                                main.textBox1.Text = "Create a note";
+                            }
+                            if (RU_radio.Checked == true)
+                            {
+                                main.textBox1.Text = "Создайте заметку";
+                            }
+                            
                             main.NoteTextBox.Text = "";
+                            main.metroLabel1.Text = "";
                         }
 
                     }
