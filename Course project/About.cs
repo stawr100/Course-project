@@ -43,12 +43,14 @@ namespace Course_project
             {
                 metroLabel1.Text = "Разработал Глушко Евгений";
                 metroLabel2.Text = "БГУИР 2016";
+                this.Text = "О программе";
 
             }
             if (lan == 0)
             {
                 metroLabel1.Text = "Developed by Evgeni Glushko";
                 metroLabel2.Text = "BSUIR 2016";
+                this.Text = "About";
             }
         }
     }

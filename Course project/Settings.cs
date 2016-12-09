@@ -142,6 +142,8 @@ namespace Course_project
                 fontsize.WriteLine(metroTrackBar1.Value);
                 fontsize.Close();
 
+                DeleteAllTrackBar.Value = 0;
+
             }
         }
 
@@ -232,14 +234,7 @@ namespace Course_project
             }
         }
 
-        
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            //textBox1.Font = new Font(FontFamily.GenericSansSerif, i, FontStyle.Bold, FontStyle.Italic);
-
-        }
-        
+               
         private void metroTrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
             metroLabel7.Text = metroTrackBar1.Value.ToString();
@@ -247,10 +242,6 @@ namespace Course_project
             textBox1.Font = new Font(FontFamily.GenericSansSerif, textsize, FontStyle.Regular);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void metroLabel8_Click(object sender, EventArgs e)
         {

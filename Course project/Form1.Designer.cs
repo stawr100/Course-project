@@ -222,7 +222,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.textBox1.Location = new System.Drawing.Point(32, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 23);
+            this.textBox1.Size = new System.Drawing.Size(343, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Создайте заметку";
             // 
@@ -258,7 +258,6 @@
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Notes";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

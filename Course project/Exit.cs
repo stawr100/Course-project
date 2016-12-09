@@ -55,6 +55,7 @@ namespace Course_project
                 metroLabel1.Text = "Вы действительно хотите выйти?";
                 Yes.Text = "Да";
                 No.Text = "Нет";
+                this.Text = "Выход";
 
             }
             if (lan == 0)
@@ -62,6 +63,7 @@ namespace Course_project
                 metroLabel1.Text = "Are you sure?";
                 Yes.Text = "Yes";
                 No.Text = "No";
+                this.Text = "Exit";
 
             }
 

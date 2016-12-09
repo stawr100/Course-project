@@ -242,7 +242,6 @@
             this.textBox1.TabIndex = 13;
             this.textBox1.Text = "Равным образом консультация с широким активом способствует подготовки и реализаци" +
     "и позиций, занимаемых участниками в отношении поставленных задач.\r\n";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // metroLabel6
             // 

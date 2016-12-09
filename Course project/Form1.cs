@@ -25,12 +25,28 @@ namespace Course_project
 
 
         public List<Button> btn = new List<Button>();
+        int lan = 0;
         public List<string> NoteText = new List<string>();
-        int x = 0;
 
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            using (System.IO.StreamReader language_state = new System.IO.StreamReader("settings\\language_state.txt"))
+            {
+                string la_state;
+                while ((la_state = language_state.ReadLine()) != null)
+                {
+                    if (la_state == "RU")
+                    {
+                        lan = 1;
+                    }
+                    if (la_state == "EN")
+                    {
+                        lan = 0;
+                    }
+
+                }
+            }
             Button oldbutton = (Button)sender;
             flowLayoutPanel1.AutoScroll = true;
             Button newbtn = new Button();
@@ -41,7 +57,14 @@ namespace Course_project
             newbtn.FlatStyle = FlatStyle.Flat;
             newbtn.BackColor = Color.FromArgb(34, 34, 34);
             newbtn.FlatAppearance.BorderColor = Color.FromArgb(68, 68, 68);
-            newbtn.Text = "Button" + this.x.ToString();
+            if (lan == 1)
+            {
+                newbtn.Text = "Новая заметка";
+            }
+            if (lan == 0)
+            {
+                newbtn.Text = "New note";
+            }
             newbtn.Click += new EventHandler(dynamic_button_click);
             Point pt = new Point(this.flowLayoutPanel1.AutoScrollPosition.X,
                      this.flowLayoutPanel1.AutoScrollPosition.Y);
@@ -53,23 +76,18 @@ namespace Course_project
             this.metroScrollBar1.Value = Math.Abs(this.flowLayoutPanel1.AutoScrollPosition.Y);
 
 
-            newbtn.Tag = x;
+           
             flowLayoutPanel1.Controls.Add(newbtn);
 
 
-            x = x + 1;
+           
         }
 
-        public int xx;
         int current_number = 0;
         object s;
         private void dynamic_button_click(object sender, EventArgs evArgs)
         {
             var pb = (Button)sender;
-            var tmp2 = (Button)sender;
-            var tmptag = (Button)sender;
-            var id = (Button)sender;
-            var num = (Button)sender;
             var button = sender as Button;
 
             s = sender;
@@ -77,7 +95,6 @@ namespace Course_project
             NoteTextBox.Text = NoteText[current_number];
 
             textBox1.Text = pb.Text;
-            xx = current_number;
 
         }
 
@@ -95,9 +112,14 @@ namespace Course_project
         {
             if (btn.Count != 0)
             {
-                btn.RemoveAt(current_number);
-                flowLayoutPanel1.Controls.Remove(s as Button);
-                textBox1.Text = "";
+                if (current_number>0 && current_number < btn.Count)
+                {
+                    btn.RemoveAt(current_number);
+                    flowLayoutPanel1.Controls.Remove(s as Button);
+                    textBox1.Text = "";
+                    NoteTextBox.Text = "";
+                }
+                
             }
 
         }
@@ -114,8 +136,6 @@ namespace Course_project
         {
             btn[current_number].Text = textBox1.Text;
             NoteText[current_number] = NoteTextBox.Text;
-
-
         }
 
         private void SaveAll_Click(object sender, EventArgs e)
@@ -131,11 +151,10 @@ namespace Course_project
             System.IO.StreamWriter textFileNote = new System.IO.StreamWriter("notes.txt");
             for (int h = 0; h < btn.Count; h++)
             {
-                string s = NoteText[h].Replace(Environment.NewLine, @" \n ");
+            string s = NoteText[h].Replace(Environment.NewLine, @" \n ");
             textFileNote.WriteLine(s);
             }
             textFileNote.Close();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -166,11 +185,11 @@ namespace Course_project
                     this.metroScrollBar1.Value = Math.Abs(this.flowLayoutPanel1.AutoScrollPosition.Y);
 
 
-                    newbtn.Tag = x;
+                    
                     flowLayoutPanel1.Controls.Add(newbtn);
 
 
-                    x = x + 1;
+                    
                 }
             }
             using (System.IO.StreamReader srnote = new System.IO.StreamReader("notes.txt"))
@@ -199,7 +218,7 @@ namespace Course_project
                 }
             }
 
-            int lan = 0; ;
+            
             using (System.IO.StreamReader language_state = new System.IO.StreamReader("settings\\language_state.txt"))
             {
                 string la_state;
@@ -257,25 +276,8 @@ namespace Course_project
 
         }
 
-        private void metroRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            this.flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-        }
 
-        private void metroLink1_Click(object sender, EventArgs e)
-        {
-            if (btn.Count != 0)
-            {   for (int h = 0; h<btn.Count; h++)
-                {
-                    btn.Clear();
-                    flowLayoutPanel1.Controls.Clear();
-                    textBox1.Text = "Создайте заметку";
-                    NoteTextBox.Text = "";
-                }
-                
-            }
-        }
-
+        
         private void settings_Click(object sender, EventArgs e)
         {
             Settings settings = new Settings();
@@ -283,11 +285,6 @@ namespace Course_project
             settings.ShowDialog();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Exit exit = new Exit();
-            //exit.ShowDialog ();
-        }
     }
 }
 
